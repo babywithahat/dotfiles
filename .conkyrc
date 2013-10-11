@@ -1,0 +1,58 @@
+# Conky settings #
+background yes 
+update_interval 1 
+double_buffer yes
+no_buffers yes
+
+# Window specifications #
+gap_x 552
+gap_y 300
+minimum_size 180 150
+maximum_width 496
+own_window no 
+own_window_type dock 
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+#own_window_argb_visual yes
+#own_window_argb_value 0
+#border_margin 0
+#border_inner_margin 0
+#border_outer_margin 0
+#alignment top_left
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftalpha 0
+xftfont Open Sans Light:size=10
+
+override_utf8_locale yes
+
+imlib_cache_size 0
+
+# Color scheme #
+default_color FFFFFF
+
+color1 FFFFFF
+color2 FFFFFF
+color3 FFFFFF
+color4 FFFFFF
+color5 FFFFFF
+color6 FFFFFF
+color7 333333
+
+TEXT
+${goto 340}${font Raleway:weight=Light :size=100}${alignc}${time %I:%M %P}${font}                 
+
+
+
+${goto 480}${font Raleway:weight=Light:size=32}${time %A %B %d}${font}
+
+
+
+${goto 776}${font Raleway:weight=Light:size=14}battery ${battery_percent BAT0}%${font}
