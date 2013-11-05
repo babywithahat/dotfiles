@@ -8,7 +8,7 @@ map J gj
 map K gk
 map H ge
 map L w
-colorscheme zenburn
+colorscheme jellybeans 
 set tabstop=2
 set shiftwidth=2
 set mouse=a
