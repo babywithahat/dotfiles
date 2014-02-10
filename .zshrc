@@ -4,15 +4,25 @@
 # functions, options, key bindings, etc.
 #
 
-autoload -U compinit
-compinit
 
 #tab completion stuff
+zstyle ':completion:*' special-dirs true 
 zstyle ':completion:*' menu select
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*:default' menu 'select=0'
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' list-colors '=(#b) #([0-9]#)*=36=31'
 
-autoload -U promptinit
+alias ls='ls --color'
+alias l='ls -lFh'
+
+autoload -Uz promptinit
 promptinit
-prompt bigfade grey white grey blue 
+autoload -U colors && colors
+PROMPT="%{$fg[yellow]%}[%n@%M %{$fg_bold[blue]%}%~%{$fg_no_bold[yellow]%}]$ "
+RPROMPT="%{$fg_bold[yellow]%}%t%{$reset_color%}"
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
 
