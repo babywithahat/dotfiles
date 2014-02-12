@@ -11,6 +11,11 @@ import XMonad
 import Data.Monoid
 import System.Exit
 import XMonad.Actions.CycleWS
+import XMonad.Hooks.ManageDocks
+import XMonad.Layout.NoBorders
+import XMonad.Layout.Fullscreen
+import XMonad.Layout.Tabbed
+import XMonad.Layout.Spiral
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -54,6 +59,13 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 --
 myNormalBorderColor  = "#1c1c1c"
 myFocusedBorderColor = "#cf6a4c"
+
+-- colors for text and background for each tab when in Tabbed layout
+tabConfig = defaultTheme { activeBorderColor   = "#cf6a4c" 
+                         , activeColor         = "#1c1c1c"
+                         , inactiveBorderColor = "#1c1c1c"
+                         , inactiveColor       = "#121212"
+                         }
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -124,7 +136,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -193,7 +205,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| tabbed shrinkText tabConfig ) ||| noBorders (fullscreenFull Full)
+  
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -226,7 +239,7 @@ myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , resource  =? "kdesktop"       --> doIgnore ] <+> manageDocks
 
 ------------------------------------------------------------------------
 -- Event handling
@@ -237,7 +250,7 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = mempty
+myEventHook = mempty <+> docksEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging

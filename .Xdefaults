@@ -1,11 +1,12 @@
-URxvt.foreground: #d0d0d0
-URxvt.background: #121212
+xterm*termName: xterm-256color
+xterm*foreground: #d0d0d0
+xterm*background: #121212
 URxvt*depth: 32
- 
+xterm*borderWidth: 0
 URxvt*saveLines:32767
 URxvt*scrollBar: false
  
-URxvt*font: xft:Inconsolata:pixelsize=14:antialias=true:hinting=true
+xterm*faceName: Inconsolata:size=10:antialias=true:hinting=false
  
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: uzbl-browser
@@ -15,51 +16,51 @@ URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 URxvt*colorUL: #c5f779
 URxvt*underlineColor: #c5f779
  
-URxvt*color0: #1c1c1c
-URxvt*color8: #404040
-URxvt*color1: #b85335
-URxvt*color9: #cf6a4c
-URxvt*color2: #799d6a
-URxvt*color10: #99ad6a
-URxvt*color3: #ffb964
-URxvt*color11: #fad07a
-URxvt*color4: #667899
-URxvt*color12: #8197bf
-URxvt*color5: #8787af
-URxvt*color13: #c6b6ee
-URxvt*color6: #668799
-URxvt*color14: #8fbfdc
-URxvt*color7: #888888
-URxvt*color15: #E8e8d3
-URxvt*keysym*Control-Up: \033[1;5A
-URxvt*keysym*Control-Down: \033[1;5B
-URxvt*keysym*Control-Left: \033[1;5D
-URxvt*keysym*Control-Right: \033[1;5C
+xterm*color0: #1c1c1c
+xterm*color8: #404040
+xterm*color1: #b85335
+xterm*color9: #cf6a4c
+xterm*color2: #799d6a
+xterm*color10: #99ad6a
+xterm*color3: #ffb964
+xterm*color11: #fad07a
+xterm*color4: #667899
+xterm*color12: #8197bf
+xterm*color5: #8787af
+xterm*color13: #c6b6ee
+xterm*color6: #668799
+xterm*color14: #8fbfdc
+xterm*color7: #888888
+xterm*color15: #E8e8d3
+!URxvt*keysym*Control-Up: \033[1;5A
+!URxvt*keysym*Control-Down: \033[1;5B
+!URxvt*keysym*Control-Left: \033[1;5D
+!URxvt*keysym*Control-Right: \033[1;5C
 !cake16
 
 
 
 !black
-xterm*color0: #353535
-xterm*color8: #666666
+!xterm*color0: #353535
+!xterm*color8: #666666
 !red
-xterm*color1: #AE4747
-xterm*color9: #EE6363
+!xterm*color1: #AE4747
+!xterm*color9: #EE6363
 !green
-xterm*color2: #556B2F
-xterm*color10: #9ACD32
+!xterm*color2: #556B2F
+!xterm*color10: #9ACD32
 !brown/yellow
-xterm*color3: #DAA520
-xterm*color11: #FFC125
+!xterm*color3: #DAA520
+!xterm*color11: #FFC125
 !blue
-xterm*color4: #6F99B4
-xterm*color12: #7C96B0
+!xterm*color4: #6F99B4
+!xterm*color12: #7C96B0
 !magenta
-xterm*color5: #8B7B8B
-xterm*color13: #D8BFD8
+!xterm*color5: #8B7B8B
+!xterm*color13: #D8BFD8
 !cyan
-xterm*color6: #A7A15E
-xterm*color14: #F0E68C
+!xterm*color6: #A7A15E
+!xterm*color14: #F0E68C
 !white
-xterm*color7: #DDDDDD
-xterm*color15: #FFFFFF
+!xterm*color7: #DDDDDD
+!xterm*color15: #FFFFFF
