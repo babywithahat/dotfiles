@@ -55,6 +55,13 @@ alias gsts='git status -s'
 alias gdt='git difftool'
 alias gtpsh='git push'
 
+
+case $TERM in
+  xterm*)
+    precmd () {print -Pn "\e]0; %~\a"}
+    preexec () {print -Pn "\e]0;$3\a"}
+  ;;
+esac
 ## history
 #setopt APPEND_HISTORY
 ## for sharing history between zsh processes
