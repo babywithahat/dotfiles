@@ -2,8 +2,11 @@ unclutter -idle 5 &
 xsetroot -cursor_name left_ptr &
 nitrogen --restore &
 xbacklight -set 75 &
-xmobar &
+xrdb -merge .Xdefaults &
 conky &
-~/.screenlayout/3screens.sh
+xscreensaver &
+xterm &
+firefox &
+xmobar &
 exec xmonad
 

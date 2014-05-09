@@ -83,6 +83,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     
     -- launch firefox
     , ((modm .|. shiftMask, xK_f     ), spawn "firefox")
+    
+    -- launch google chrome
+    , ((modm .|. shiftMask, xK_g     ), spawn "google-chrome")
+    
+    -- launch vstudio
+    , ((modm .|. shiftMask, xK_v     ), spawn "vstudio")
+    
+    -- launch spacefm file manager
+    , ((modm .|. shiftMask, xK_s     ), spawn "spacefm")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
