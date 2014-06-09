@@ -4,7 +4,7 @@ xterm*background: #121212
 URxvt*depth: 32
 xterm*borderWidth: 0
 URxvt*saveLines:32767
-URxvt*scrollBar: false
+xterm*scrollBar: false
  
 xterm*faceName: Inconsolata:size=10:antialias=true:hinting=false
  
