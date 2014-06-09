@@ -9,8 +9,8 @@ map K gk
 map H ge
 map L w
 colorscheme jellybeans 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set mouse=a
 set ruler
 set noeb vb t_vb=
